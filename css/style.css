@@ -1,0 +1,159 @@
+body {
+  height: 1000vw;
+  font-family: "Apple SD Gothic Neo", "Roboto", "Noto Sans KR", NanumGothic,
+    "Malgun Gothic", sans-serif;
+  -webkit-overflow-scrolling: touch;
+  background: #000000;
+  transition: 0.5s;
+}
+/* 
+.progress-bar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 110;
+  width: 100vw;
+  height: 3vh;
+  background-color: white;
+} */
+
+.world {
+  /* 화면이 스크롤되어도 움지이지 않도록 position 값을 fixed로 준다 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  /* 원근 */
+  perspective: 1000px;
+}
+
+.stage {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  transition: all ease 2.5s 0s;
+  /* transition: ease 2s; */
+  transform-style: preserve-3d;
+}
+
+.stage[data-checked="false"] {
+  box-sizing: border-box;
+  width: 15vw;
+  height: 15vw;
+  left: 42vw;
+  top: 40vh;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.stage[data-checked="false"]:hover {
+  cursor: pointer;
+}
+
+.stage[data-checked="true"] {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  transform: translate3d(0vw, 0vw, -990vw);
+  background-color: none;
+}
+
+.wall {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+}
+
+.wall-left {
+  width: 2000vw;
+  /* background: black; */
+  background: #1f1e1e;
+  transform: rotateY(90deg) translate3d(0, 0, -1000vw);
+}
+
+.wall-right {
+  width: 2000vw;
+  /* background: black; */
+  background: #1f1e1e;
+  transform: rotateY(90deg) translate3d(0, 0, -900vw);
+}
+
+.wall-front {
+  left: 0px;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wall-content {
+  width: 100vw;
+  height: 100vh;
+  z-index: 110;
+  box-shadow: 1rem 1rem 1rem #383838;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.wall-front-a {
+  transform: translate3d(0, 0, 810vw);
+}
+.wall-front-b {
+  transform: translate3d(0, 0, 620vw);
+}
+.wall-front-c {
+  transform: translate3d(0, 0, 410vw);
+}
+.wall-front-d {
+  transform: translate3d(0, 0, 200vw);
+}
+.wall-front-e {
+  transform: translate3d(0, 0, -40vw);
+}
+.wall-front-f {
+  transform: translate3d(0, 0, -280vw);
+}
+.wall-front-g {
+  transform: translate3d(0, 0, -520vw);
+}
+.wall-front-h {
+  transform: translate3d(0, 0, -760vw);
+}
+.wall-front-i {
+  transform: translate3d(0, 0, -1000vw);
+}
+
+.wall-front-a .wall-content {
+  background-image: url("../img/1.jpeg");
+}
+
+.wall-front-b .wall-content {
+  background-image: url("../img/2.jpeg");
+}
+.wall-front-c .wall-content {
+  background-image: url("../img/3.jpeg");
+}
+.wall-front-d .wall-content {
+  background-image: url("../img/4.jpeg");
+}
+.wall-front-e .wall-content {
+  background-image: url("../img/5.jpeg");
+}
+.wall-front-f .wall-content {
+  background-image: url("../img/6.jpeg");
+}
+.wall-front-g .wall-content {
+  background-image: url("../img/7.jpeg");
+}
+.wall-front-h .wall-content {
+  background-image: url("../img/8.jpeg");
+}
+.wall-front-i .wall-content {
+  background-image: url("../img/9.jpeg");
+}

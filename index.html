@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gallery</title>
+</head>
+<body>
+    <!-- <div class="progress-bar">
+        <div class="me-char"></div>
+    </div> -->
+    <div class="world">
+        <div class="stage" data-checked="false">
+            <div class="wall wall-left">
+            </div>
+            <div class="wall wall-right">
+            </div>
+            <div class="wall wall-front wall-front-a">
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-b">
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-c">                
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-d">                
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-e">                
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-f">                
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-g">               
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-h">                
+                <div class="wall-content"></div>
+            </div>
+            <div class="wall wall-front wall-front-i">                
+                <div class="wall-content"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        (function() {
+            const stageElem = document.querySelector('.stage');
+            const ballElem = document.querySelector('.ball');
+            const front_walls = document.querySelectorAll('.wall-front');
+
+            stageElem.addEventListener('click', function(e) {
+                if(stageElem.getAttribute('data-checked') === "false"){   
+                    stageElem.setAttribute('data-checked','true');
+                    document.querySelector('.wall-left').style.visibility = "visible";
+                    document.querySelector('.wall-right').style.visibility = "visible";
+                    
+                
+                    setTimeout(function() {
+                        for(var i = 0, obj; i < front_walls.length, obj = front_walls[i]; i++) {
+                            obj.style.visibility  = "visible";
+                        }
+                        stageElem.style.transition = "none";
+                        document.querySelector('body').style.background = 'white';
+                    }, 2000);
+                }
+            });
+
+            
+        })();
+    </script>
+    <script src="./js/scroll.js"></script>
+</body>
+</html>
